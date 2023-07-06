@@ -1,0 +1,24 @@
+name: MNO/simple-python-jenkins-usecase-demo
+on:
+  workflow_dispatch:
+jobs:
+  Git_Checkout:
+    name: Git Checkout
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3.5.0
+    - name: checkout
+      uses: actions/checkout@v3.5.0
+      with:
+        repository: TVenkataManikanta/simple-python-repo-demo
+  Python_Execution:
+    name: Python Execution
+    runs-on: ubuntu-latest
+    needs: Git_Checkout
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3.5.0
+    - name: sh
+      shell: bash
+      run: python3 simple-python-jenkins-usecase.py
